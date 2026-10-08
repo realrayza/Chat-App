@@ -1,105 +1,77 @@
-# Chat App
-
 # MERN Chat App
 
-A real-time private messaging application built with the **MERN stack** and **Socket.IO**.
+A real-time private messaging app built with the **MERN stack** and **Socket.IO**. Users create accounts, add contacts by unique user ID, and exchange private messages that arrive instantly, with conversation history, unread counts, and browser notifications.
 
-The app allows users to create accounts, connect with contacts using unique user IDs, exchange private messages in real time, view conversation history, track unread messages, and receive browser notifications.
+**🔗 Live demo:** https://chat-app-realrayza.vercel.app
 
-## 🚀 Features
+**Demo accounts** (open two browser windows to see real-time delivery):
 
-* 🔐 User authentication with JWT
-* 👤 Unique user ID for each account
-* 💬 Private one-to-one messaging
-* ⚡ Real-time messaging with Socket.IO
-* 💾 Persistent message storage with MongoDB
-* 👥 Contact-based conversations
-* 📖 Conversation history
-* 📬 Read/unread message status
-* 🔔 Browser notifications
-* 📱 Responsive interface
-* 🌐 Local network support for testing across devices
-* 🔒 Password hashing with bcrypt
-* 🛡️ Protected API routes
-* 🔄 Real-time message delivery to sender and receiver
+| User | Email / Username | Password |
+| ---- | ---------------- | -------- |
+| Demo A | `REPLACE_ME` | `REPLACE_ME` |
+| Demo B | `REPLACE_ME` | `REPLACE_ME` |
 
-## 🛠️ Tech Stack
+![Chat screen](./docs/chat-screenshot.png)
+<!-- Add a screenshot or GIF at docs/chat-screenshot.png (or change the path) -->
 
-### Frontend
+## Features
 
-* React
-* React Router
-* Context API
-* `useReducer`
-* Socket.IO Client
-* Fetch API
-* CSS
+- JWT authentication with bcrypt password hashing
+- Unique user ID per account
+- Private one-to-one messaging
+- Real-time delivery to sender and receiver via Socket.IO
+- Persistent message storage in MongoDB
+- Contact-based conversations and full conversation history
+- Read/unread status with unread counts
+- Browser notifications for incoming messages
+- Responsive interface
+- Protected API routes and server-side message ownership checks
 
-### Backend
+## Tech Stack
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* Socket.IO
-* JSON Web Token (JWT)
-* bcrypt
-* CORS
+**Frontend:** React, React Router, Context API with `useReducer`, Socket.IO Client, Fetch API, CSS
 
-## 📁 Project Structure
+**Backend:** Node.js, Express.js, MongoDB, Mongoose, Socket.IO, JSON Web Tokens, bcrypt, CORS
 
-```text
-chat-app/
-│
-├── frontend/
+## Project Structure
+
+```
+Chat-App/
+├── chat-app/        # React frontend
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
 │   └── package.json
-│
-├── backend/
+├── backend/         # Express + Socket.IO API
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
 │   ├── middleware/
 │   ├── server.js
 │   └── package.json
-│
 └── README.md
 ```
 
-## ⚙️ Installation
+## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone https://github.com/realrayza/Chat-App.git
+cd Chat-App
 ```
 
-### 2. Install backend dependencies
+### 2. Install dependencies
 
 ```bash
 cd backend
 npm install
-```
 
-### 3. Install frontend dependencies
-
-```bash
-cd ../frontend
+cd ../chat-app
 npm install
 ```
 
-## 🔑 Environment Variables
+### 3. Configure environment variables
 
-### Backend
-
-Create a `.env` file inside the `backend` directory:
+Create a `.env` file inside `backend/`:
 
 ```env
 dbURL=mongodb://localhost:27017/chatapp
@@ -107,249 +79,94 @@ SECRET=your_jwt_secret
 frontEnd=http://localhost:5173
 ```
 
-For development across devices on the same local network, the frontend URL can use your computer's local IP:
+`.env` is ignored by Git. Never commit it.
 
-```env
-frontEnd=http://YOUR_LOCAL_IP:5173
-```
+### 4. Run the app
 
-For example:
-
-```env
-frontEnd=http://192.168.1.10:5173
-```
-
-> Never commit your `.env` file to GitHub.
-
-Add it to `.gitignore`:
-
-```gitignore
-.env
-node_modules
-```
-
-## ▶️ Running the Application
-
-Start the backend:
+In one terminal:
 
 ```bash
 cd backend
 npm run dev
 ```
 
-Start the frontend in another terminal:
+In another:
 
 ```bash
-cd frontend
+cd chat-app
 npm run dev
 ```
 
-The frontend will normally be available at:
+- Frontend: http://localhost:5173
+- Backend: http://localhost:4000
 
-```text
-http://localhost:5173
+### Testing on a phone (same Wi-Fi)
+
+Use your computer's local IP instead of `localhost`, for example `http://192.168.1.10:5173`, and set the same address in the backend:
+
+```env
+frontEnd=http://192.168.1.10:5173
 ```
 
-The backend will normally run on:
+You may need to allow the dev ports through your firewall.
 
-```text
-http://localhost:4000
+## How Real-Time Messaging Works
+
+HTTP handles authentication, history, and saving messages. Socket.IO handles live delivery.
+
+```
+Sender → HTTP request → Express API
+                          ├── save message to MongoDB
+                          └── emit Socket.IO event → receiver's room → new message appears
 ```
 
-## 🔄 Real-Time Messaging
+Each user joins a private Socket.IO room named after their unique user ID, so the server can deliver a message only to its intended recipient.
 
-The application uses **Socket.IO** to deliver messages without requiring the user to refresh the page.
-
-When a user sends a message:
-
-```text
-Sender
-   │
-   │ HTTP request
-   ▼
-Express API
-   │
-   ├── Save message to MongoDB
-   │
-   └── Emit Socket.IO event
-            │
-            ▼
-       Receiver's room
-            │
-            ▼
-       New message
-```
-
-Each user joins a private Socket.IO room based on their unique user ID.
-
-For example:
-
-```text
-I234@chat.io
-```
-
-This allows the server to send a private message directly to the intended user.
-
-## 💬 Message Flow
-
-Messages are stored in MongoDB with information such as:
+### Message model
 
 ```js
 {
   senderId: String,
   receiverId: String,
   text: String,
-  isUnknownContact: Boolean,
-  readAt: Date,
+  read: Boolean,
   createdAt: Date,
   updatedAt: Date
 }
 ```
 
-The application stores user IDs rather than names in messages. This prevents messages from becoming outdated if a user's display name changes.
+Messages store user IDs rather than display names, so they never go stale if a user changes their name.
 
-## 👥 Contacts
+### Contacts and read status
 
-Users can communicate with contacts using their unique user ID.
+The frontend verifies the relationship between sender and receiver before treating a message as a known contact message. Opening a conversation marks its messages as read, which drives the unread counts.
 
-The backend verifies the relationship between the sender and receiver before treating a message as a known contact conversation.
+## Security
 
-Messages can also be identified as belonging to an unknown contact.
+- JWT authentication and bcrypt password hashing
+- Protected API endpoints
+- CORS restricted to the configured frontend origin
+- Contact validation and server-side message ownership checks
+- Secrets loaded from environment variables
 
-## 📖 Read Status
+## Deployment Notes
 
-Messages support read/unread tracking.
+- Set `dbURL`, `SECRET`, and `frontEnd` as environment variables on your host.
+- CORS must allow the production frontend origin, and the Socket.IO client must point at the production backend.
+- Serve everything over HTTPS (required for browser notifications).
+- Socket.IO needs a host that supports long-lived connections (e.g. Render, Railway, Fly.io). Serverless platforms generally do not.
 
-When a user opens a conversation, the application can update messages between the two users as read.
+## Roadmap
 
-This allows the interface to display unread message counts before a conversation is opened.
+- [ ] Typing indicators
+- [ ] Online/offline presence and last seen
+- [ ] Message delivery status
+- [ ] Edit and delete messages
+- [ ] Image and file sharing
+- [ ] Group conversations
+- [ ] Message search and pagination
+- [ ] Push notifications
 
-## 🔔 Browser Notifications
+## License
 
-The application supports browser notifications for incoming messages.
-
-Notification permission must be granted by the user before notifications can be displayed.
-
-For production deployments, browser notification features require a secure origin such as HTTPS.
-
-## 📱 Testing on a Phone
-
-During local development, the application can be accessed from another device connected to the same Wi-Fi network.
-
-Instead of:
-
-```text
-http://localhost:5173
-```
-
-use your computer's local IP address:
-
-```text
-http://YOUR_LOCAL_IP:5173
-```
-
-The backend must also be reachable through the computer's local IP.
-
-For example:
-
-```env
-frontEnd=http://192.168.1.10:5173
-```
-
-Your firewall may also need to allow connections to the development ports.
-
-## 🌐 Production
-
-For production deployment, configure separate environment variables for the frontend and backend.
-
-Example:
-
-```env
-dbURL=your_mongodb_connection_string
-SECRET=your_secure_jwt_secret
-frontEnd=https://your-frontend-domain.com
-```
-
-Make sure:
-
-* MongoDB is accessible by the backend
-* CORS allows the production frontend
-* Socket.IO connects to the production backend
-* HTTPS is enabled
-* Secrets are stored as environment variables
-* `.env` is not committed to GitHub
-
-## 🔒 Security
-
-The application uses several security mechanisms:
-
-* JWT authentication
-* Password hashing with bcrypt
-* Protected API endpoints
-* CORS configuration
-* Environment variables for secrets
-* Contact validation
-* Server-side message ownership checks
-
-### Important
-
-Do not place secrets directly inside the source code.
-
-Bad:
-
-```js
-const SECRET = "my-secret";
-```
-
-Good:
-
-```js
-const SECRET = process.env.SECRET;
-```
-
-## 🧪 Development
-
-The project was developed with a focus on understanding the complete flow of a real-time MERN application:
-
-```text
-React
-  ↓
-Express API
-  ↓
-MongoDB
-  ↑
-Socket.IO
-  ↑
-React
-```
-
-HTTP requests are used for operations such as authentication, fetching message history, and saving messages, while Socket.IO handles real-time delivery.
-
-## 🗺️ Future Improvements
-
-Potential improvements include:
-
-* [ ] Typing indicators
-* [ ] Online/offline presence
-* [ ] Last seen status
-* [ ] Message delivery status
-* [ ] Message editing
-* [ ] Message deletion
-* [ ] Image/file sharing
-* [ ] Voice messages
-* [ ] Group conversations
-* [ ] Push notifications
-* [ ] End-to-end encryption
-* [ ] Message search
-* [ ] Pagination/infinite scrolling
-* [ ] Improved notification controls
-
-## 📄 License
-
-This project is currently available for learning and development purposes.
-
----
-
-Built with **React, Node.js, Express, MongoDB, and Socket.IO**.
-
-
+Available for learning and development purposes.
