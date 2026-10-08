@@ -2,17 +2,17 @@
 
 A real-time private messaging app built with the **MERN stack** and **Socket.IO**. Users create accounts, add contacts by unique user ID, and exchange private messages that arrive instantly, with conversation history, unread counts, and browser notifications.
 
-**🔗 Live demo:** https://chat-app-realrayza.vercel.app
+**🔗 Live demo:** [https://chat-app-green-delta-39.vercel.app/](https://chat-app-green-delta-39.vercel.app/)p
 
 **Demo accounts** (open two browser windows to see real-time delivery):
 
 | User | Email / Username | Password |
 | ---- | ---------------- | -------- |
-| Demo A | `REPLACE_ME` | `REPLACE_ME` |
-| Demo B | `REPLACE_ME` | `REPLACE_ME` |
+| Demo A | `testA@test.dev` | `Testing123_` |
+| Demo B | `testB@test.dev` | `Testing123_` |
 
 ![Chat screen](./docs/chat-screenshot.png)
-<!-- Add a screenshot or GIF at docs/chat-screenshot.png (or change the path) -->
+
 
 ## Features
 
