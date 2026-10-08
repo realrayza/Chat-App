@@ -14,6 +14,7 @@ app.use(cors( {
     origin: process.env.frontEnd,
     credentials: true,
   }));
+  console.log( process.env.frontEnd)
 const server = http.createServer(app);
 app.use(express.json());
 
