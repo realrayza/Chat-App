@@ -50,7 +50,7 @@ app.use("/api/messages/", messageRoutes(io));
 app.use("/api/contacts/", contactRoutes);
 
 mongoose.connect(process.env.dbURL).then(() => {
-  server.listen(4000,"0.0.0.0", console.log("DB connected and Server listening"));
+  server.listen(4000, console.log("DB connected and Server listening"));
 });
 
 module.exports = app;
