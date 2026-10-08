@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import { UserContextProvider } from "./Context/UserCOntextProvider.jsx";
+import { UserContextProvider } from "./Context/UserContextProvider.jsx";
 import { ChatContextProvider } from "./Context/ChatContextProvider.jsx";
 import { ContactContextProvider } from "./Context/ContactContextProvider.jsx";
 import { ScrollToTop } from "./Layout/Layout Components/ScrollToTop.jsx";
