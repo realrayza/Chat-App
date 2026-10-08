@@ -10,6 +10,10 @@ export const ChatDisplayReceiver = ({ message }) => {
         behaviour: "smooth"
       })
     },[message])
+    const updatedTime = new Date(message.createdAt)
+    const formattedTime = updatedTime.toLocaleString("en-us",
+    {year:"numeric", month: "long", day:"numeric", hour:"numeric",minute:"2-digit"}
+  )
 
   const alias = contacts.find((contact) => contact.uid === message.senderId);
   return (
@@ -20,7 +24,7 @@ export const ChatDisplayReceiver = ({ message }) => {
         </div>
         <div className="pad10 font ">{message.text}</div>
         <div className="font mainColor fontColorMain smallerFont padBottom5 padLeft10 padTop5">
-          {message.createdAt}
+          {formattedTime}
         </div>
       </div>
     </div>
