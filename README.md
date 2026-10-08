@@ -2,7 +2,7 @@
 
 A real-time private messaging app built with the **MERN stack** and **Socket.IO**. Users create accounts, add contacts by unique user ID, and exchange private messages that arrive instantly, with conversation history, unread counts, and browser notifications.
 
-**🔗 Live demo:** [https://chat-app-green-delta-39.vercel.app/](https://chat-app-green-delta-39.vercel.app/)p
+**🔗 Live demo:** [https://chat-app-green-delta-39.vercel.app/](https://chat-app-green-delta-39.vercel.app/)
 
 **Demo accounts** (open two browser windows to see real-time delivery):
 
