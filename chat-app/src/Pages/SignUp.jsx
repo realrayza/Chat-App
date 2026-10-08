@@ -14,6 +14,8 @@ export const SignUp = () => {
   const url = import.meta.env.VITE_BACKEND_URL;
   const navigate = useNavigate();
 
+  console.log(url)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
