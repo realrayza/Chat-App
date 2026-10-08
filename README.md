@@ -11,8 +11,7 @@ A real-time private messaging app built with the **MERN stack** and **Socket.IO*
 | Demo A | `testA@test.dev` | `Testing123_` |
 | Demo B | `testB@test.dev` | `Testing123_` |
 
-![Chat screen](https://github.com/realrayza/Chat-App/blob/7c04a28e07440829797d0de666f7143f20072335/Screenshot%202026-10-08%20191041.png)
-
+![Chat screen](https://github.com/realrayza/Chat-App/blob/7c04a28e07440829797d0de666f7143f20072335/Screenshot%202026-10-08%20191041.png?raw=true)
 
 ## Features
 
