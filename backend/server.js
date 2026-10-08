@@ -10,7 +10,10 @@ const messageRoutes = require("./routes/messageRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
-app.use(cors());
+app.use(cors( {
+    origin: process.env.frontEnd,
+    credentials: true,
+  }));
 const server = http.createServer(app);
 app.use(express.json());
 
