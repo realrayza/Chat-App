@@ -1,0 +1,28 @@
+import { useEffect, useRef } from "react";
+import { useContact } from "../hooks/useContact";
+export const ChatDisplayReceiver = ({ message }) => {
+   const context = useContact();
+  const { contacts } = context;
+   const messageScrollRef = useRef(null)
+  
+    useEffect(()=>{
+      messageScrollRef.current?.scrollIntoView({
+        behaviour: "smooth"
+      })
+    },[message])
+
+  const alias = contacts.find((contact) => contact.uid === message.senderId);
+  return (
+    <div className="flexRow left" ref={messageScrollRef}>
+      <div className="mgBottom5 mgTop5 chatView chatViewMd ChatViewMd fourthColor flexColumn gap5 radius10 hideOverflow">
+        <div className="padBottom5 padLeft10 padTop5 font ">
+          {message?.senderId === alias?.uid? alias.name : message.senderId}
+        </div>
+        <div className="pad10 font ">{message.text}</div>
+        <div className="font mainColor fontColorMain smallerFont padBottom5 padLeft10 padTop5">
+          {message.createdAt}
+        </div>
+      </div>
+    </div>
+  );
+};

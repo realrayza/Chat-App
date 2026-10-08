@@ -1,0 +1,1232 @@
+:root {
+  background-color: rgb(77, 4, 95);
+  --mainColor: rgb(77, 4, 95);
+  --bgColorWithTransparency: rgba(0, 0, 0, 0.521);
+  --chatBgColor: rgba(0, 0, 0, 0.719);
+  --secColor: white;
+  --thirdColor: rgb(190, 14, 235);
+  --fourthColor: rgb(211, 211, 211);
+  --errorColor: rgb(250, 7, 7);
+  --font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* UI */
+.mainColor {
+  background-color: var(--mainColor);
+}
+.secColor {
+  background-color: var(--secColor);
+}
+.thirdColor {
+  background-color: var(--thirdColor);
+}
+.fourthColor {
+  background-color: var(--fourthColor);
+}
+.fontColorMain {
+  color: var(--secColor);
+}
+.fontColorSec {
+  color: var(--mainColor);
+}
+.fontColorThird {
+  color: var(--thirdColor);
+}
+.font {
+  font-family: var(--font-family);
+}
+.chatBG {
+  background-color: var(--chatBgColor);
+}
+
+/* padding and margin */
+.pad0 {
+  padding: 0px;
+}
+.pad5 {
+  padding: 0.3125rem;
+}
+.pad10 {
+  padding: 0.635rem;
+}
+.pad15 {
+  padding: 0.9375rem;
+}
+.pad20 {
+  padding: 1.25rem;
+}
+.pad25 {
+  padding: 1.5625rem;
+}
+.padTop0 {
+  padding-top: 0px;
+}
+.padTop5 {
+  padding-top: 0.3125rem;
+}
+.padTop10 {
+  padding-top: 0.625rem;
+}
+.padTop15 {
+  padding-top: 0.9375rem;
+}
+.padTop20 {
+  padding-top: 1.25rem;
+}
+.padTop25 {
+  padding-top: 1.5625rem;
+}
+.padLeft0 {
+  padding-left: 0px;
+}
+.padLeft5 {
+  padding-left: 0.3125rem;
+}
+.padLeft10 {
+  padding-left: 0.625rem;
+}
+.padLeft15 {
+  padding-left: 0.9375rem;
+}
+.padLeft20 {
+  padding-left: 1.25rem;
+}
+.padLeft25 {
+  padding-left: 1.5625rem;
+}
+.padRight0 {
+  padding-right: 0px;
+}
+.padRight5 {
+  padding-right: 0.3125rem;
+}
+.padRight10 {
+  padding-right: 0.625rem;
+}
+.padRight15 {
+  padding-right: 0.9375rem;
+}
+.padRight20 {
+  padding-right: 1.25rem;
+}
+.padRight25 {
+  padding-right: 1.5625rem;
+}
+.padBottom0 {
+  padding-bottom: 0px;
+}
+.padBottom5 {
+  padding-bottom: 0.3125rem;
+}
+.padBottom10 {
+  padding-bottom: 0.625rem;
+}
+.padBottom15 {
+  padding-bottom: 0.9375rem;
+}
+.padBottom20 {
+  padding-bottom: 1.25rem;
+}
+.padBottom25 {
+  padding-bottom: 1.5625rem;
+}
+.mg0 {
+  margin: 0px;
+}
+.mg5 {
+  margin: 0.3125rem;
+}
+.mg10 {
+  margin: 0.625rem;
+}
+.mg15 {
+  margin: 0.9375rem;
+}
+.mg20 {
+  margin: 1.25rem;
+}
+.mg25 {
+  margin: 1.5625rem;
+}
+.mgTop0 {
+  margin-top: 0px;
+}
+.mgTop5 {
+  margin-top: 0.3125rem;
+}
+.mgTop10 {
+  margin-top: 0.625rem;
+}
+.mgTop15 {
+  margin-top: 0.9375rem;
+}
+.mgTop20 {
+  margin-top: 1.25rem;
+}
+.mgTop25 {
+  margin-top: 1.5625rem;
+}
+.mgLeft0 {
+  padding-left: 0px;
+}
+.mgLeft5 {
+  margin-left: 0.3125rem;
+}
+.mgLeft10 {
+  margin-left: 0.625rem;
+}
+.mgLeft15 {
+  margin-left: 0.9375rem;
+}
+.mgLeft20 {
+  margin-left: 1.25rem;
+}
+.mgLeft25 {
+  margin-left: 1.5625rem;
+}
+.mgRight0 {
+  margin-right: 0px;
+}
+.mgRight5 {
+  margin-right: 0.3125rem;
+}
+.mgRight10 {
+  margin-right: 0.625rem;
+}
+.mgRight15 {
+  margin-right: 0.9375rem;
+}
+.mgRight20 {
+  margin-right: 1.25rem;
+}
+.mgRight25 {
+  margin-right: 1.5625rem;
+}
+.mgBottom0 {
+  margin-bottom: 0px;
+}
+.mgBottom5 {
+  margin-bottom: 0.3125rem;
+}
+.mgBottom10 {
+  margin-bottom: 0.625rem;
+}
+.mgBottom15 {
+  margin-bottom: 0.9375rem;
+}
+.mgBottom20 {
+  margin-bottom: 1.25rem;
+}
+.mgBottom25 {
+  margin-bottom: 1.5625rem;
+}
+
+/* Display */
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Justification and alignment */
+.left {
+  justify-content: start;
+}
+.center {
+  justify-content: center;
+}
+.right {
+  justify-content: end;
+}
+.justifyItemLeft {
+  justify-items: start;
+}
+.justifyItemCenter {
+  justify-items: center;
+}
+.justifyItemRight {
+  justify-items: end;
+}
+.selfLeft {
+  justify-self: start;
+}
+.selfCenter {
+  justify-self: center;
+}
+.selfRight {
+  justify-self: end;
+}
+.alignTop {
+  align-content: start;
+}
+.alignCenter {
+  align-content: center;
+}
+.alignBottom {
+  align-content: end;
+}
+.itemTop {
+  align-items: start;
+}
+.itemCenter {
+  align-items: center;
+}
+.itemBottom {
+  align-items: end;
+}
+.selfAlignTop {
+  align-self: flex-end;
+}
+.selfAlignCenter {
+  align-self: center;
+}
+.selfAlignBottom {
+  align-self: flex-end;
+}
+.gap0 {
+  gap: 0px;
+}
+.gap5 {
+  gap: 0.3125rem;
+}
+.gap10 {
+  gap: 0.625rem;
+}
+.gap15 {
+  gap: 0.9375rem;
+}
+.gap20 {
+  gap: 1.25rem;
+}
+.gap25 {
+  gap: 1.5625rem;
+}
+.spaceBetween {
+  justify-content: space-between;
+}
+.spaceAround {
+  justify-content: space-around;
+}
+.alignSPaceBetween {
+  align-content: space-between;
+}
+.alignSPaceAround {
+  align-content: space-around;
+}
+.itemSPaceBetween {
+  align-items: space-between;
+}
+.itemSPaceAround {
+  align-items: space-around;
+}
+.jItemSPaceBetween {
+  justify-items: space-between;
+}
+.jItemSPaceAround {
+  justify-items: space-around;
+}
+
+/* Font */
+.font {
+  font-family: var(--font-family);
+}
+.bold500 {
+  font-weight: 500;
+}
+.bold700 {
+  font-weight: 700;
+}
+.bold800 {
+  font-weight: 800;
+}
+.bold {
+  font-weight: bold;
+}
+.bolder {
+  font-weight: bolder;
+}
+.tinyFont {
+  font-size: 0.625rem;
+}
+.smallFont {
+  font-size: 0.9375rem;
+}
+.largeFont {
+  font-size: 1.25rem;
+}
+.largerFont {
+  font-size: 1.5625rem;
+}
+.hugeFont {
+  font-size: 1.875rem;
+}
+.hugerFont {
+  font-size: 2.5rem;
+}
+
+.biggerFont {
+  font-size: 5.5rem;
+}
+
+/* Border */
+.noBorder {
+  border: none;
+}
+.solidBorder {
+  border-style: solid;
+}
+.mainBorderColor {
+  border-color: var(--mainColor);
+}
+.secBorderColor {
+  border-color: var(--secColor);
+}
+.bdWidth0 {
+  border-width: 0px;
+}
+.bdWidth2 {
+  border-width: 0.0375rem;
+}
+.bdWidth3 {
+  border-width: 0.1875rem;
+}
+.bdWidth5 {
+  border-width: 0.3125rem;
+}
+.boxShadowMain {
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem var(--mainColor);
+}
+.boxShadowSec {
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem var(--secColor);
+}
+.radius0 {
+  border-radius: 0px;
+}
+.radius5 {
+  border-radius: 0.3125rem;
+}
+.radius10 {
+  border-radius: 0.625rem;
+}
+.radius15 {
+  border-radius: 0.9375rem;
+}
+.radius20 {
+  border-radius: 1.25rem;
+}
+.radius25 {
+  border-radius: 1.5625rem;
+}
+.round {
+  border-radius: 3.125rem;
+}
+
+/* width and height */
+.vw100 {
+  width: 100vw;
+}
+.vb100 {
+  width: 100vb;
+}
+.vw100 {
+  width: 100%;
+}
+.vwAuto {
+  width: auto;
+}
+.vh100 {
+  height: 100vh;
+}
+.h100 {
+  height: 100%;
+}
+.hAuto {
+  height: auto;
+}
+
+.links {
+  text-decoration: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* button on click */
+Button:active {
+  scale: 98%;
+}
+/* button on hover */
+Button:hover {
+  scale: 101%;
+}
+
+.hover {
+  scale: 101%;
+}
+.active {
+  scale: 98%;
+}
+/* error */
+.error {
+  color: var(--errorColor);
+  width: 100%;
+  background-color: rgb(247, 227, 227);
+  border-color: var(--errorColor);
+  text-align: center;
+}
+
+/* transition */
+.transition {
+  transition: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* overflow */
+
+.hideOverflow {
+  overflow: hidden;
+}
+.hideOverflowX {
+  overflow-x: hidden;
+}
+.hideOverflowY {
+  overflow-y: hidden;
+}
+.scrollOverflow {
+  overflow: scroll;
+}
+.scrollOverflowY {
+  overflow-y: scroll;
+}
+.scrollOverflowX {
+  overflow-x: scroll;
+}
+.autoOverflow {
+  overflow: auto;
+}
+.autoOverflowX {
+  overflow-x: auto;
+}
+.autoOverflowY {
+  overflow-y: auto;
+}
+
+/* layout */
+.layout {
+  width: 100vw;
+  display: grid-area;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "header header header"
+    "pages pages pages"
+    "footer footer footer";
+}
+.header {
+  width: 100vw;
+  height: 4rem;
+  grid-area: header;
+}
+.pages {
+  width: 100vw;
+  grid-area: pages;
+}
+.footer {
+  position:absolute;
+  width: 100vw;
+  grid-area: footer;
+  height: 6.25rem;
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: top;
+  background-color: var(--bgColorWithTransparency);
+  background-image: url(./assets/friends.jpg);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  padding-left: 15rem;
+  padding-top: 15rem;
+}
+
+.login,
+.signup {
+  width: 100vw;
+  height: auto;
+  background-image: url(./assets/chatkeyboard.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.formContainer {
+  width: 40rem;
+  height: 100vh;
+}
+.loginImage {
+  width: 80rem;
+}
+
+.loginForm {
+  width: 25rem;
+  height: max-content;
+}
+
+.chat {
+  width: 50rem;
+  height: 50rem;
+}
+.chatDisplay {
+  width: 30rem;
+  height: 5rem;
+}
+.chat::-webkit-scrollbar {
+  background-color: transparent;
+  display: none;
+}
+
+.chatBox {
+  width: 60rem;
+  height: max-content;
+}
+.messageDisplay {
+  height: 20rem;
+}
+.buttonNav {
+  width: max-content;
+}
+
+.chatView {
+  width: 30rem;
+  height: auto;
+}
+
+.textArea {
+  height: 5rem;
+}
+.sideBar {
+  width: 10rem;
+}
+.modalVisible {
+  display: block;
+}
+.modalHide {
+  display: none;
+}
+.contacts {
+  height: 80rem;
+  width: 30rem;
+}
+.headerIcon {
+  display: none;
+}
+.notFound{
+  background-image: url("./assets/404-not-found.jpg");
+  background-size:cover;
+}
+.return{
+  background-color: rgba(224, 219, 219, 0.918);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  /* padding and margin */
+  .pad0Md {
+    padding: 0px;
+  }
+  .pad5Md {
+    padding: 0.3125rem;
+  }
+  .pad10Md {
+    padding: 0.635rem;
+  }
+  .pad15Md {
+    padding: 0.9375rem;
+  }
+  .pad20Md {
+    padding: 1.25rem;
+  }
+  .pad25Md {
+    padding: 1.5625rem;
+  }
+  .padTop0Md {
+    padding-top: 0px;
+  }
+  .padTop5Md {
+    padding-top: 0.3125rem;
+  }
+  .padTop10Md {
+    padding-top: 0.625rem;
+  }
+  .padTop15Md {
+    padding-top: 0.9375rem;
+  }
+  .padTop20Md {
+    padding-top: 1.25rem;
+  }
+  .padTop25Md {
+    padding-top: 1.5625rem;
+  }
+  .padLeft0Md {
+    padding-left: 0px;
+  }
+  .padLeft5Md {
+    padding-left: 0.3125rem;
+  }
+  .padLeft10Md {
+    padding-left: 0.625rem;
+  }
+  .padLeft15Md {
+    padding-left: 0.9375rem;
+  }
+  .padLeft20Md {
+    padding-left: 1.25rem;
+  }
+  .padLeft25Md {
+    padding-left: 1.5625rem;
+  }
+  .padRight0Md {
+    padding-right: 0px;
+  }
+  .padRight5Md {
+    padding-right: 0.3125rem;
+  }
+  .padRight10Md {
+    padding-right: 0.625rem;
+  }
+  .padRight15Md {
+    padding-right: 0.9375rem;
+  }
+  .padRight20Md {
+    padding-right: 1.25rem;
+  }
+  .padRight25Md {
+    padding-right: 1.5625rem;
+  }
+  .padBottom0Md {
+    padding-bottom: 0px;
+  }
+  .padBottom5Md {
+    padding-bottom: 0.3125rem;
+  }
+  .padBottom10Md {
+    padding-bottom: 0.625rem;
+  }
+  .padBottom15Md {
+    padding-bottom: 0.9375rem;
+  }
+  .padBottom20Md {
+    padding-bottom: 1.25rem;
+  }
+  .padBottom25Md {
+    padding-bottom: 1.5625rem;
+  }
+  .mg0Md {
+    margin: 0px;
+  }
+  .mg5Md {
+    margin: 0.3125rem;
+  }
+  .mg10Md {
+    margin: 0.625rem;
+  }
+  .mg15Md {
+    margin: 0.9375rem;
+  }
+  .mg20Md {
+    margin: 1.25rem;
+  }
+  .mg25Md {
+    margin: 1.5625rem;
+  }
+  .mgTop0Md {
+    margin-top: 0px;
+  }
+  .mgTop5Md {
+    margin-top: 0.3125rem;
+  }
+  .mgTop10Md {
+    margin-top: 0.625rem;
+  }
+  .mgTop15Md {
+    margin-top: 0.9375rem;
+  }
+  .mgTop20Md {
+    margin-top: 1.25rem;
+  }
+  .mgTop25Md {
+    margin-top: 1.5625rem;
+  }
+  .mgLeft0Md {
+    padding-left: 0px;
+  }
+  .mgLeft5Md {
+    margin-left: 0.3125rem;
+  }
+  .mgLeft10Md {
+    margin-left: 0.625rem;
+  }
+  .mgLeft15Md {
+    margin-left: 0.9375rem;
+  }
+  .mgLeft20Md {
+    margin-left: 1.25rem;
+  }
+  .mgLeft25Md {
+    margin-left: 1.5625rem;
+  }
+  .mgRight0Md {
+    margin-right: 0px;
+  }
+  .mgRight5Md {
+    margin-right: 0.3125rem;
+  }
+  .mgRight10Md {
+    margin-right: 0.625rem;
+  }
+  .mgRight15Md {
+    margin-right: 0.9375rem;
+  }
+  .mgRight20Md {
+    margin-right: 1.25rem;
+  }
+  .mgRight25Md {
+    margin-right: 1.5625rem;
+  }
+  .mgBottom0Md {
+    margin-bottom: 0px;
+  }
+  .mgBottom5Md {
+    margin-bottom: 0.3125rem;
+  }
+  .mgBottom10Md {
+    margin-bottom: 0.625rem;
+  }
+  .mgBottom15Md {
+    margin-bottom: 0.9375rem;
+  }
+  .mgBottom20Md {
+    margin-bottom: 1.25rem;
+  }
+  .mgBottom25Md {
+    margin-bottom: 1.5625rem;
+  }
+
+  /* Display */
+  .showMd {
+    display: block;
+  }
+  .hiddenMd {
+    display: none;
+  }
+  .flexRowMd {
+    display: flex;
+    flex-direction: row;
+  }
+  .flexRowReverseMd {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .flexColumnMd {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Justification and alignment */
+  .leftMd {
+    justify-content: start;
+  }
+  .centerMd {
+    justify-content: center;
+  }
+  .rightMd {
+    justify-content: end;
+  }
+  .justifyItemLeftMd {
+    justify-items: start;
+  }
+  .justifyItemCenterMd {
+    justify-items: center;
+  }
+  .justifyItemRightMd {
+    justify-items: end;
+  }
+  .selfLeftMd {
+    justify-self: start;
+  }
+  .selfCenterMd {
+    justify-self: center;
+  }
+  .selfRightMd {
+    justify-self: end;
+  }
+  .alignTopMd {
+    align-content: start;
+  }
+  .alignCenterMd {
+    align-content: center;
+  }
+  .alignBottomMd {
+    align-content: end;
+  }
+  .itemTopMd {
+    align-items: start;
+  }
+  .itemCenterMd {
+    align-items: center;
+  }
+  .itemBottomMd {
+    align-items: end;
+  }
+  .selfAlignTopMd {
+    align-self: flex-end;
+  }
+  .selfAlignCenterMd {
+    align-self: center;
+  }
+  .selfAlignBottomMd {
+    align-self: flex-end;
+  }
+  .gap0Md {
+    gap: 0px;
+  }
+  .gap5Md {
+    gap: 0.3125rem;
+  }
+  .gap10Md {
+    gap: 0.625rem;
+  }
+  .gap15Md {
+    gap: 0.9375rem;
+  }
+  .gap20Md {
+    gap: 1.25rem;
+  }
+  .gap25Md {
+    gap: 1.5625rem;
+  }
+  .spaceBetweenMd {
+    justify-content: space-between;
+  }
+  .spaceAroundMd {
+    justify-content: space-around;
+  }
+  .alignSPaceBetweenMd {
+    align-content: space-between;
+  }
+  .alignSPaceAroundMd {
+    align-content: space-around;
+  }
+  .itemSPaceBetweenMd {
+    align-items: space-between;
+  }
+  .itemSPaceAroundMd {
+    align-items: space-around;
+  }
+  .jItemSPaceBetweenMd {
+    justify-items: space-between;
+  }
+  .jItemSPaceAroundMd {
+    justify-items: space-around;
+  }
+
+  /* Font */
+
+  .bold500Md {
+    font-weight: 500;
+  }
+  .bold700Md {
+    font-weight: 700;
+  }
+  .bold800Md {
+    font-weight: 800;
+  }
+  .boldMd {
+    font-weight: bold;
+  }
+  .bolderMd {
+    font-weight: bolder;
+  }
+  .tinyFontMd {
+    font-size: 0.625rem;
+  }
+  .smallFontMd {
+    font-size: 0.9375rem;
+  }
+  .largeFontMd {
+    font-size: 1.25rem;
+  }
+  .largerFontMd {
+    font-size: 1.5625rem;
+  }
+  .hugeFontMd {
+    font-size: 1.875rem;
+  }
+  .hugerFontMd {
+    font-size: 2.5rem;
+  }
+
+  .biggerFontMd {
+    font-size: 5.5rem;
+  }
+
+  /* Border */
+  .noBorderMd {
+    border: none;
+  }
+  .solidBorderMd {
+    border-style: solid;
+  }
+  .mainBorderColorMd {
+    border-color: var(--mainColor);
+  }
+  .secBorderColorMd {
+    border-color: var(--secColor);
+  }
+  .bdWidth0Md {
+    border-width: 0px;
+  }
+  .bdWidth2Md {
+    border-width: 0.0375rem;
+  }
+  .bdWidth3Md {
+    border-width: 0.1875rem;
+  }
+  .bdWidth5Md {
+    border-width: 0.3125rem;
+  }
+  .boxShadowMainMd {
+    box-shadow: 0.3125rem 0.3125rem 0.3125rem var(--mainColor);
+  }
+  .boxShadowSecMd {
+    box-shadow: 0.3125rem 0.3125rem 0.3125rem var(--secColor);
+  }
+  .radius0Md {
+    border-radius: 0px;
+  }
+  .radius5Md {
+    border-radius: 0.3125rem;
+  }
+  .radius10Md {
+    border-radius: 0.625rem;
+  }
+  .radius15Md {
+    border-radius: 0.9375rem;
+  }
+  .radius20Md {
+    border-radius: 1.25rem;
+  }
+  .radius25Md {
+    border-radius: 1.5625rem;
+  }
+  .roundMd {
+    border-radius: 3.125rem;
+  }
+
+  /* width and height */
+  .vw100Md {
+    width: 100vw;
+  }
+  .vb100Md {
+    width: 100vb;
+  }
+  .vw100Md {
+    width: 100%;
+  }
+  .vwAutoMd {
+    width: auto;
+  }
+  .vh100Md {
+    height: 100vh;
+  }
+  .h100Md {
+    height: 100%;
+  }
+  .hAutoMd {
+    height: auto;
+  }
+
+  /* error */
+  .errorMd {
+    color: var(--errorColor);
+    width: 100%;
+    background-color: rgb(247, 227, 227);
+    border-color: var(--errorColor);
+    text-align: center;
+  }
+
+  /* overflow */
+
+  .hideOverflowMd {
+    overflow: hidden;
+  }
+  .hideOverflowXMd {
+    overflow-x: hidden;
+  }
+  .hideOverflowYMd {
+    overflow-y: hidden;
+  }
+  .scrollOverflowMd {
+    overflow: scroll;
+  }
+  .scrollOverflowYMd {
+    overflow-y: scroll;
+  }
+  .scrollOverflowXMd {
+    overflow-x: scroll;
+  }
+  .autoOverflowMd {
+    overflow: auto;
+  }
+  .autoOverflowXMd {
+    overflow-x: auto;
+  }
+  .autoOverflowYMd {
+    overflow-y: auto;
+  }
+  .headerMd {
+    height: 3rem;
+    background-color: var(--mainColor);
+  }
+
+  .rightHeaderMd {
+    background-color: var(--mainColor);
+    position: fixed;
+    width: 100vw;
+    left: 0rem;
+    padding-left: 1.2rem;
+    padding-bottom: 1rem;
+    top:2.5rem;
+    z-index: 2;
+  }
+
+
+  .homeMd {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: top;
+    background-color: var(--bgColorWithTransparency);
+    background-image: url(./assets/friends.jpg);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    padding-left: 2rem;
+    padding-top: 2rem;
+  }
+
+  .loginMd,
+  .signupMd {
+    width: 100vw;
+    height: auto;
+    background-image: url(./assets/chatkeyboard.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .formContainerMd {
+    width: 40rem;
+    height: 100vh;
+  }
+  .loginImageMd {
+    width: 80rem;
+  }
+
+  .loginFormMd {
+    width: 25rem;
+    height: max-content;
+  }
+
+  .chatMd {
+    width: 25rem;
+    height: 50rem;
+    
+  }
+  .chatDisplayMd {
+    width: 24.5rem;
+    height: 5rem;
+  }
+  .chatMd::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
+  }
+
+  .chatBoxMd {
+    width: 24.5rem;
+  
+  }
+  .messageDisplayMd {
+    height: 20rem;
+  }
+  .buttonNavMd {
+    width: max-content;
+  }
+
+  .chatViewMd {
+    width: 15rem;
+    height: auto;
+  }
+   .contactViewMd {
+    width: 23rem;
+    height: auto;
+  }
+  .textAreaMd {
+    height: 5rem;
+  }
+  .sideBarMd {
+    width: 10rem;
+  }
+  .modalVisibleMd {
+    display: block;
+  }
+  .modalHideMd {
+    display: none;
+  }
+  .contactsMd {
+    height: 80rem;
+    width: 30rem;
+  }
+  .headerIconMd {
+    display: none;
+  }
+  .footerMd {
+  width: 100vw;
+  grid-area: footer;
+  height: 6.25rem;
+
+}
+.pageMd{
+  width:24.5;
+  margin-left: 0px;
+  padding:0.625rem;
+}
+.contactFormInputMd{
+  width:24rem
+}
+}
+
+

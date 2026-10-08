@@ -1,0 +1,402 @@
+[
+  {
+    "_id": "68db3f00a1b2c3d4e5f60001",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Hey, how are you doing?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:00:10.000Z",
+    "createdAt": "2026-09-30T09:00:00.000Z",
+    "updatedAt": "2026-09-30T09:00:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60002",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "I'm good. How about you?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:01:10.000Z",
+    "createdAt": "2026-09-30T09:01:00.000Z",
+    "updatedAt": "2026-09-30T09:01:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60003",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I'm doing well too.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:02:10.000Z",
+    "createdAt": "2026-09-30T09:02:00.000Z",
+    "updatedAt": "2026-09-30T09:02:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60004",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Are you still working on the chat app?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:03:10.000Z",
+    "createdAt": "2026-09-30T09:03:00.000Z",
+    "updatedAt": "2026-09-30T09:03:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60005",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Yes. I'm working on the Socket.IO messaging part now.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:04:10.000Z",
+    "createdAt": "2026-09-30T09:04:00.000Z",
+    "updatedAt": "2026-09-30T09:04:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60006",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Nice. Are the messages being saved to MongoDB?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:05:10.000Z",
+    "createdAt": "2026-09-30T09:05:00.000Z",
+    "updatedAt": "2026-09-30T09:05:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60007",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Yes, that's the next part I'm testing.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:06:10.000Z",
+    "createdAt": "2026-09-30T09:06:00.000Z",
+    "updatedAt": "2026-09-30T09:06:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60008",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "You should also make sure the messages are marked as read.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:07:10.000Z",
+    "createdAt": "2026-09-30T09:07:00.000Z",
+    "updatedAt": "2026-09-30T09:07:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60009",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "That's what I'm planning to use readAt for.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:08:10.000Z",
+    "createdAt": "2026-09-30T09:08:00.000Z",
+    "updatedAt": "2026-09-30T09:08:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6000a",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Makes sense.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:09:10.000Z",
+    "createdAt": "2026-09-30T09:09:00.000Z",
+    "updatedAt": "2026-09-30T09:09:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6000b",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I'm also trying to figure out the best way to handle contacts.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:10:10.000Z",
+    "createdAt": "2026-09-30T09:10:00.000Z",
+    "updatedAt": "2026-09-30T09:10:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6000c",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Are you storing the contact ID or the username?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:11:10.000Z",
+    "createdAt": "2026-09-30T09:11:00.000Z",
+    "updatedAt": "2026-09-30T09:11:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6000d",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I'm storing the MongoDB ID and the UID.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:12:10.000Z",
+    "createdAt": "2026-09-30T09:12:00.000Z",
+    "updatedAt": "2026-09-30T09:12:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6000e",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "That's probably better since the username can change.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:13:10.000Z",
+    "createdAt": "2026-09-30T09:13:00.000Z",
+    "updatedAt": "2026-09-30T09:13:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6000f",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Exactly. I don't want existing contacts to break if someone changes their username.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:14:10.000Z",
+    "createdAt": "2026-09-30T09:14:00.000Z",
+    "updatedAt": "2026-09-30T09:14:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60010",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "How are you handling private messages?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:15:10.000Z",
+    "createdAt": "2026-09-30T09:15:00.000Z",
+    "updatedAt": "2026-09-30T09:15:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60011",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Each user joins a Socket.IO room based on their UID.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:16:10.000Z",
+    "createdAt": "2026-09-30T09:16:00.000Z",
+    "updatedAt": "2026-09-30T09:16:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60012",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "So when I send a message, you emit it to my UID?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:17:10.000Z",
+    "createdAt": "2026-09-30T09:17:00.000Z",
+    "updatedAt": "2026-09-30T09:17:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60013",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Yes. The backend checks the receiver ID first and then sends the message to that room.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:18:10.000Z",
+    "createdAt": "2026-09-30T09:18:00.000Z",
+    "updatedAt": "2026-09-30T09:18:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60014",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "What happens if the receiver doesn't exist?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:19:10.000Z",
+    "createdAt": "2026-09-30T09:19:00.000Z",
+    "updatedAt": "2026-09-30T09:19:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60015",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "The server rejects the message instead of trying to send it.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:20:10.000Z",
+    "createdAt": "2026-09-30T09:20:00.000Z",
+    "updatedAt": "2026-09-30T09:20:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60016",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "And what about someone who isn't in my contacts?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:21:10.000Z",
+    "createdAt": "2026-09-30T09:21:00.000Z",
+    "updatedAt": "2026-09-30T09:21:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60017",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I'm checking the contact list before saving the message.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:22:10.000Z",
+    "createdAt": "2026-09-30T09:22:00.000Z",
+    "updatedAt": "2026-09-30T09:22:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60018",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "That should prevent random users from appearing in someone's chat list.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:23:10.000Z",
+    "createdAt": "2026-09-30T09:23:00.000Z",
+    "updatedAt": "2026-09-30T09:23:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60019",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Yes. I'm trying to keep the message flow simple.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:24:10.000Z",
+    "createdAt": "2026-09-30T09:24:00.000Z",
+    "updatedAt": "2026-09-30T09:24:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6001a",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Are you going to add typing indicators?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:25:10.000Z",
+    "createdAt": "2026-09-30T09:25:00.000Z",
+    "updatedAt": "2026-09-30T09:25:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6001b",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Probably later. I want to get the basic messaging working first.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:26:10.000Z",
+    "createdAt": "2026-09-30T09:26:00.000Z",
+    "updatedAt": "2026-09-30T09:26:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6001c",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "That's a good idea. One feature at a time.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:27:10.000Z",
+    "createdAt": "2026-09-30T09:27:00.000Z",
+    "updatedAt": "2026-09-30T09:27:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6001d",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I'm also testing what happens when one user disconnects.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:28:10.000Z",
+    "createdAt": "2026-09-30T09:28:00.000Z",
+    "updatedAt": "2026-09-30T09:28:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6001e",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Does the room disappear when they disconnect?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:29:10.000Z",
+    "createdAt": "2026-09-30T09:29:00.000Z",
+    "updatedAt": "2026-09-30T09:29:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f6001f",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Socket.IO removes the socket from its rooms when the connection closes.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:30:10.000Z",
+    "createdAt": "2026-09-30T09:30:00.000Z",
+    "updatedAt": "2026-09-30T09:30:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60020",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "What happens to messages sent while the user is offline?",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:31:10.000Z",
+    "createdAt": "2026-09-30T09:31:00.000Z",
+    "updatedAt": "2026-09-30T09:31:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60021",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "They are still saved in MongoDB, so the user can retrieve them when they reconnect.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:32:10.000Z",
+    "createdAt": "2026-09-30T09:32:00.000Z",
+    "updatedAt": "2026-09-30T09:32:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60022",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "That means the frontend can request the conversation when the chat page opens.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:33:10.000Z",
+    "createdAt": "2026-09-30T09:33:00.000Z",
+    "updatedAt": "2026-09-30T09:33:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60023",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "Exactly. Socket.IO handles the real-time part while MongoDB handles persistence.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:34:10.000Z",
+    "createdAt": "2026-09-30T09:34:00.000Z",
+    "updatedAt": "2026-09-30T09:34:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60024",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "That separation makes the architecture much easier to understand.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:35:10.000Z",
+    "createdAt": "2026-09-30T09:35:00.000Z",
+    "updatedAt": "2026-09-30T09:35:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60025",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I'm finally starting to understand how all the pieces fit together.",
+    "isUnknownContact": false,
+    "readAt": "2026-09-30T09:36:10.000Z",
+    "createdAt": "2026-09-30T09:36:00.000Z",
+    "updatedAt": "2026-09-30T09:36:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60026",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Great. Let me know when you've finished testing it.",
+    "isUnknownContact": false,
+    "readAt": null,
+    "createdAt": "2026-09-30T09:37:00.000Z",
+    "updatedAt": "2026-09-30T09:37:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60027",
+    "senderId": "USER_A",
+    "receiverId": "USER_B",
+    "text": "I will. I'm going to test reconnecting next.",
+    "isUnknownContact": false,
+    "readAt": null,
+    "createdAt": "2026-09-30T09:38:00.000Z",
+    "updatedAt": "2026-09-30T09:38:00.000Z"
+  },
+  {
+    "_id": "68db3f00a1b2c3d4e5f60028",
+    "senderId": "USER_B",
+    "receiverId": "USER_A",
+    "text": "Sounds good. Good luck with the testing.",
+    "isUnknownContact": false,
+    "readAt": null,
+    "createdAt": "2026-09-30T09:39:00.000Z",
+    "updatedAt": "2026-09-30T09:39:00.000Z"
+  }
+]
