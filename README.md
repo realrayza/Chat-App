@@ -1,6 +1,6 @@
 # MERN Chat App
 
-A real-time private messaging app built with the **MERN stack** and **Socket.IO**. Users create accounts, add contacts by unique user ID, and exchange private messages that arrive instantly, with conversation history, unread counts, and browser notifications.
+A real-time private messaging app built with the **MERN stack** and **Socket.IO**. Users create accounts, add contacts by phone number, and exchange private messages that arrive instantly, with conversation history, unread counts, and browser notifications.
 
 **🔗 Live demo:** [https://chat-app-green-delta-39.vercel.app/](https://chat-app-green-delta-39.vercel.app/)
 
@@ -16,7 +16,8 @@ A real-time private messaging app built with the **MERN stack** and **Socket.IO*
 ## Features
 
 - JWT authentication with bcrypt password hashing
-- Unique user ID per account
+- Phone number as each account's unique ID (Nkata ID)
+- Add contacts by phone number
 - Private one-to-one messaging
 - Real-time delivery to sender and receiver via Socket.IO
 - Persistent message storage in MongoDB
@@ -109,6 +110,17 @@ frontEnd=http://192.168.1.10:5173
 
 You may need to allow the dev ports through your firewall.
 
+## User IDs
+
+Every account's unique ID (the Nkata ID) is the user's **phone number**. It is used to:
+
+- identify the account across the app,
+- add someone as a contact,
+- address messages (`senderId` / `receiverId`),
+- name the user's private Socket.IO room.
+
+Because the phone number is the unique ID, each phone number can register only one account.
+
 ## How Real-Time Messaging Works
 
 HTTP handles authentication, history, and saving messages. Socket.IO handles live delivery.
@@ -119,14 +131,14 @@ Sender → HTTP request → Express API
                           └── emit Socket.IO event → receiver's room → new message appears
 ```
 
-Each user joins a private Socket.IO room named after their unique user ID, so the server can deliver a message only to its intended recipient.
+Each user joins a private Socket.IO room named after their unique ID (their phone number), so the server can deliver a message only to its intended recipient.
 
 ### Message model
 
 ```js
 {
-  senderId: String,
-  receiverId: String,
+  senderId: String,    // sender's phone number
+  receiverId: String,  // receiver's phone number
   text: String,
   read: Boolean,
   createdAt: Date,
