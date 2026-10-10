@@ -17,31 +17,31 @@ export const Contacts = () => {
       <div className="page pageMd mgLeft25 vw100 vh100 flexColumn hideOverflowXMd">
         <div className="addContact">
           <button
-            className="noBorder pad10 largeFont bold700 fontColorSec radius5 font"
+            className="noBorder pad10 bigMidFont bigMidFontMd bold700 fontColorSec radius5 font"
             onClick={() => setVisible(!visible)}>
             Add Contact +
           </button>
         </div>
         {error && (
-          <h2 className="error  fontColorMain mgTop15 font pad10 bold500 solidBorder bdWidth2">{error.message}</h2>
+          <h2 className="error  fontColorMain mgTop15 font pad10 bold500 solidBorder bdWidth2">{error}</h2>
         )}
         <div className={`${visible ? "modalVisible" : "modalHide"} mgTop20`}>
           <form className="flexRow gap15 flexColumnMd " onSubmit={addContact}>
             <input
-              className="largerFont pad5 font fontColorSec radius5 noBorder contactFormInputMd"
+              className="midFont midFontMd pad5 font fontColorSec radius5 noBorder contactFormInputMd"
               type="text"
               placeholder="Contact Name..."
               onChange={(e) => setContactName(e.target.value)}
             />
             <input
-              className="largerFont pad5 font fontColorSec radius5 noBorder contactFormInputMd "
+              className="midFont midFontMd pad5 font fontColorSec radius5 noBorder contactFormInputMd "
               type="text"
               placeholder="Contact NkataId..."
               onChange={(e) => setContactId(e.target.value)}
             />
             <button
               type="submit"
-              className="largerFont padTop5 padBottom5 padRight10 padLeft10 bold700 font fontColorSec radius5 noBorder contactFormInputMd">
+              className="midFont midFontMd padTop5 padBottom5 padRight10 padLeft10 bold700 font fontColorSec radius5 noBorder contactFormInputMd">
               Save
             </button>
           </form>
@@ -58,7 +58,7 @@ export const Contacts = () => {
                 </div>
               ))
             ) : (
-              <div className="largerFont font bold700 fontColorMain mgTop15">
+              <div className="bigMidFont font bold700 fontColorMain ">
                 No Contacts to display
               </div>
             )}

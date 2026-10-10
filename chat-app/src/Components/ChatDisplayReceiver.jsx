@@ -19,11 +19,11 @@ export const ChatDisplayReceiver = ({ message }) => {
   return (
     <div className="flexRow left" ref={messageScrollRef}>
       <div className="mgBottom5 mgTop5 chatView chatViewMd ChatViewMd fourthColor flexColumn gap5 radius10 hideOverflow">
-        <div className="padBottom5 padLeft10 padTop5 font ">
+        <div className="padBottom5 padLeft10 padTop5 font fontColorSec bold boldMd ">
           {message?.senderId === alias?.uid? alias.name : message.senderId}
         </div>
         <div className="pad10 font ">{message.text}</div>
-        <div className="font mainColor fontColorMain smallerFont padBottom5 padLeft10 padTop5">
+        <div className="font mainColor fontColorMain tinyFont tinyFontMd padBottom5 padLeft10 padTop5">
           {formattedTime}
         </div>
       </div>

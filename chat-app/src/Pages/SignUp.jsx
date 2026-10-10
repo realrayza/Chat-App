@@ -8,6 +8,7 @@ export const SignUp = () => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const auth = useUserContext();
   const { setUser } = auth;
@@ -22,7 +23,7 @@ export const SignUp = () => {
     try {
       const register = await fetch(`${url}/api/users/signup`, {
         method: "POST",
-        body: JSON.stringify({ email, name, username, password }),
+        body: JSON.stringify({ email, name, username, password,phone }),
         headers: { "Content-Type": "application/json" },
       });
       const data = await register.json();
@@ -86,6 +87,17 @@ export const SignUp = () => {
                 id="email"
                 className="formInput formInput font  pad5 radius5 solid bdWidth2 smallFont fontColorsec mgBottom10"
                 placeholder="Email..."
+              />
+              <input
+                value={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  setError(null);
+                }}
+                type="phone"
+                id="phone"
+                className="formInput formInput font  pad5 radius5 solid bdWidth2 smallFont fontColorsec mgBottom10"
+                placeholder="Phone number"
               />
 
               <input

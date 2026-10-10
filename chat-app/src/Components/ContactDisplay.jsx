@@ -10,10 +10,10 @@ export const ContactDisplay = ({contact,setReceiverId,receiverId}) => {
                     handleChatUser()
                   }} >
       <div className="mgBottom5 mgTop5 chatView contactViewMd fourthColor flexColumn radius10 hideOverflow">
-        <div className="padLeft10 padTop5 font largerFont bold700 ">
+        <div className="padLeft10 padTop5 font largeFont largeFontMd bold700 ">
           {contact.name.toUpperCase()}
         </div>
-        <div className="pad10 font largeFont ">
+        <div className="pad10 font midFont midFontMd ">
             {contact.uid}
         </div>
       </div>

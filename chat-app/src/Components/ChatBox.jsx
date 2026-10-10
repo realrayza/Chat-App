@@ -13,15 +13,13 @@ export const ChatBox = ({
   error,
   text,
   setText,
-  setError
+  setError,
 }) => {
   const [contact, setContact] = useState(receiverId);
-   const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   // const url = import.meta.env.VITE_BACKEND_URL;
-   const chats = useChatContext();
-  const {
-    fetchChats,conversations
-  } = chats;
+  const chats = useChatContext();
+  const { fetchChats, conversations } = chats;
 
   const sortedConversations = conversations?.sort(
     (a, b) => b.createdAt - a.createdAt,
@@ -30,9 +28,17 @@ export const ChatBox = ({
   const { user } = auth;
   const navigate = useNavigate();
   const context = useContact();
-  const { contacts,addContact,setContactName,setContactId,contactId, error:addError,setError:setAddError } = context;
+  const {
+    contacts,
+    addContact,
+    setContactName,
+    setContactId,
+    contactId,
+    error: addError,
+    setError: setAddError,
+  } = context;
   const alias = contacts.find((contact) => contact.uid === receiverId);
-  
+
   // scrollMessage
   // const messageScrollRef = useRef(null)
 
@@ -43,73 +49,95 @@ export const ChatBox = ({
   // },[sortedConversations])
   // fetch previous conversation
   useEffect(() => {
-    if(!receiverId){
-      return
+    if (!receiverId) {
+      return;
     }
-    if(receiverId){
-      setContactId(receiverId)
+    if (receiverId) {
+      setContactId(receiverId);
     }
-  fetchChats()
-  }, [receiverId,setContactId,fetchChats]);
+    fetchChats();
+  }, [receiverId, setContactId, fetchChats]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     await sendMessage();
-  
   };
-
 
   return (
     <div className="chatBox chatBoxMd secColor radius10 pad15 pad5 mgLeft10Md">
       <div className=" flexColumn spaceBetween gap15">
+        {!receiverId && <div className="textNotice font fontColorSec bold smallFont">
+          <div>
+            To start chatting you need the Nkata ID of the other user. You can
+            also share your Nkata ID.
+          </div>
+          <div>Your Nkata ID is: {user.nkataId} </div>
+        </div>}
+
         <div className="flexRow spaceBetween gap10">
           <h2
-            className="fontColorMain pointer buttonNav mainColor font largeFont pointer pointer buttonNav pad10 radius10"
+            className="fontColorMain pad10  mainColor font midFont midFontMd pointer radius10"
             onClick={() => {
-              (setReceiverId(""), setError(null), navigate(-1),setAddError(null),setContactId(""));
-            }}>
-            ⬅ Back
-          </h2>
+              (setReceiverId(""),
+                setError(null),
+                navigate(-1),
+                setAddError(null),
+                setContactId(""));
+            }}>Back</h2>
           {!alias && (
             <h2
-              className="fontColorMain pointer buttonNav mainColor font largeFont pointer pointer buttonNav pad10 radius10"
-             onClick={() => {setVisible(!visible);setAddError(null);}}>
+              className="fontColorMain  mainColor font midFont midFontMd pointer radius10 pad10"
+              onClick={() => {
+                setVisible(!visible);
+                setAddError(null);
+              }}>
               Add Contact+
             </h2>
           )}
         </div>
-         {addError !== null && (
-          <h2 className="error  fontColorMain mgTop15 font pad10 bold500 solidBorder bdWidth2">{addError.message}</h2>
+        {addError !== null && (
+          <h2 className="error midFontMd midFont  fontColorMain mgTop15 font pad10 bold500 solidBorder bdWidth2">
+            {addError.message}
+          </h2>
         )}
-        <div className={`${visible ? "modalVisible" : "modalHide"} mgTop20 selfAlignCenter`}>
-          <form className="flexRow flexColumnMd spaceBetween gap15" onSubmit={addContact}>
+        <div
+          className={`${visible ? "modalVisible" : "modalHide"} mgTop20 selfAlignCenter`}>
+          <form
+            className="flexRow flexColumnMd spaceBetween gap15"
+            onSubmit={addContact}>
             <input
-              className="largeFont pad5 font fontColorSec radius5 bdWidth2 solidBorder"
+              className="midFontMd midFont pad5 font fontColorSec radius5 bdWidth2 solidBorder"
               type="text"
               placeholder="Contact Name..."
-              onChange={(e) => {setContactName(e.target.value);setAddError(null);}}
+              onChange={(e) => {
+                setContactName(e.target.value);
+                setAddError(null);
+              }}
             />
             <input
-              className="largeFont pad5 font fontColorSec radius5 bdWidth2 solidBorder "
+              className="midFontMd midFont pad5 font fontColorSec radius5 bdWidth2 solidBorder "
               type="text"
               value={contactId}
-              onChange={(e) => {setContactId(e.target.value);setAddError(null);}}
+              onChange={(e) => {
+                setContactId(e.target.value);
+                setAddError(null);
+              }}
             />
             <button
               type="submit"
-              className="mainColor fontColorMain largeFont padTop5 padBottom5 padRight10 padLeft10 bold700 font radius5 noBorder">
+              className="mainColor fontColorMain midFontMd midFont padTop5 padBottom5 padRight10 padLeft10 bold700 font radius5 noBorder">
               Save
             </button>
           </form>
         </div>
         {error && (
-          <h2 className="error font pad5 mgLeft20 bdWidth2 largeFont">
+          <h2 className="error font pad5 mgLeft20 bdWidth2 midFontMd midFont">
             {error}
           </h2>
         )}
         <div className="flexRow gap10 itemCenter">
-          <h2 className="font fontColorSec">To:</h2>
+          <h2 className="font midFontMd midFont fontColorSec">To:</h2>
           <input
             value={
               receiverId
@@ -120,37 +148,40 @@ export const ChatBox = ({
                     : receiverId
                 : contact
             }
-            className="vw100 bold700 font largeFont pad5 radius5 bdWidth2 solidBorder"
+            placeholder="Nkata ID..."
+            className="vw100 bold700 font midFontMd midFont pad5 radius5 bdWidth2 solidBorder fontColorSec"
             type="text"
             onChange={(e) => {
               setError(null);
-              setContact(e.target.value);setAddError(null);
+              setContact(e.target.value);
+              setAddError(null);
             }}
             required={!receiverId}
           />
           <button
-            className="noBorder bold700 font largeFont mainColor fontColorMain padBottom5 padLeft15 padRight15 padTop5 radius5 "
+            className="noBorder bold700 font midFontMd midFont mainColor fontColorMain padBottom5 padLeft15 padRight15 padTop5 radius5 "
             onClick={() => {
-              (setError(null), setReceiverId(contact), setAddError(null));fetchChats()
+              (setError(null), setReceiverId(contact), setAddError(null));
+              fetchChats();
             }}
             disabled={!contact}>
             Chat
           </button>
         </div>
+
         {conversations && (
           <div className="messageDisplay messageDisplayMd hideOverflow scrollOverflowY">
             {sortedConversations.map((message) => (
-              <div key={message._id} >
+              <div key={message._id}>
                 {message.senderId === user.nkataId ? (
                   <ChatDisplaySender message={message} />
                 ) : (
-                  <ChatDisplayReceiver message={message}/>
+                  <ChatDisplayReceiver message={message} />
                 )}
               </div>
             ))}
-           <div  />
+            <div />
           </div>
-      
         )}
 
         <form className="compose flexColumn gap5" onSubmit={handleSubmit}>

@@ -22,7 +22,7 @@ export const Inbox = ({ setReceiverId, message, handleChatUser, user }) => {
           localStorage.setItem("receiver",JSON.stringify(message.contact))
         }}>
         <div className="flexColumn center itemTop ">
-          <div className="padLeft15 hugeFont fontColorMain bold700">
+          <div className="padLeft15 largerFont largerFontMd fontColorMain bold700">
             { alias ? (
               alias.name
             ) : (sortedMessages[sortedMessages.length-1].senderId === user.nkataId && sortedMessages[sortedMessages.length-1].receiverId === user.nkataId? "You" :

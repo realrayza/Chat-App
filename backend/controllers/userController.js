@@ -21,11 +21,11 @@ const createToken = (_id, uid, nkataId) => {
 };
 
 const signup = async (req, res) => {
-  const { email, name, username, password } = req.body;
+  const { email, name, username, password,phone } = req.body;
 
   try {
     const uid = await generateUniqueUID();
-    const nkataId = await `${username}@nkt`;
+    const nkataId = await phone;
 
     const user = await User.signup(
       name,

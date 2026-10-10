@@ -21,12 +21,12 @@ export const Header = () => {
         <TfiAlignLeft fill="white" size="1.5em" />
       </div>
       <div
-        className={`rightHeaderMd  ${isOpen ? " showMd  largerFontMd" : "hiddenMd"} transition`}>
+        className={`rightHeaderMd  ${isOpen ? " showMd  bigMidFontMd" : "hiddenMd"} transition`}>
         <nav
           className="flexRow flexColumnMd  gap10 gap10Md mgRight20"
           onClick={() => setIsOpen(!isOpen)}>
           {user && (
-            <div className="fontColorMain font bold">Hi, {user.nkataId}</div>
+            <div className="fontColorMain font bold">Hi, {user.name}</div>
           )}
           <Link className="links fontColorMain font bold" to="/">
             HOME

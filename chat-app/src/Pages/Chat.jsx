@@ -6,29 +6,27 @@ import { Inbox } from "../Components/Inbox";
 import { useEffect } from "react";
 
 export const Chat = () => {
- 
   const navigate = useNavigate();
   const auth = useUserContext();
   const { user } = auth;
- 
+
   const chats = useChatContext();
   const {
     messages,
     receiverId,
     setText,
-    setReceiverId,fetchHistory,convoDispatch
+    setReceiverId,
+    fetchHistory,
+    convoDispatch,
   } = chats;
-  
-  useEffect(()=>{
-    fetchHistory()
-  },[fetchHistory])
 
- 
+  useEffect(() => {
+    fetchHistory();
+  }, [fetchHistory]);
+
   const sortedMessages = [...messages].sort(
     (a, b) => new Date(b.updatedTime) - new Date(a.updatedTime),
   );
- 
-
 
   const handleChatUser = () => {
     navigate(`/chat/${receiverId}`);
@@ -45,8 +43,11 @@ export const Chat = () => {
     <PagesAndSide>
       <div className="page ">
         <div className="chat chatMd mgLeft10 pad5 mgRight10 pad0Md mgRight5Md mgLeft5Md vb100 scrollOverflowY hideOverflowX ">
+          <div className="pad10 pad10Md mgBottom15 fontColor fontColorMain font bold700 midFont midFontMd flexColumn flexColumnMd">
+            <h2>Welcome {user.name}.</h2> <h3>Nkata Id: {user.nkataId}</h3>
+          </div>
           <button
-            className="pointer createChatMd chatBg fontColorsec pad10 noBorder largeFont font bold700 mgLeft15 radius5 mgBottom10"
+            className="pointer createChatMd chatBg fontColorsec pad10 noBorder bigMidFont bigMidFontMd font bold700 mgLeft15 radius5 mgBottom10"
             onClick={newChat}>
             New Chat +
           </button>
@@ -54,16 +55,14 @@ export const Chat = () => {
             sortedMessages?.map((message, index) => (
               <div key={index} className="chatHistory pad5  flexRow">
                 <Inbox
-                user={user}
-                message={message}
-                handleChatUser={handleChatUser}
-                setReceiverId={setReceiverId}
+                  user={user}
+                  message={message}
+                  handleChatUser={handleChatUser}
+                  setReceiverId={setReceiverId}
                 />
               </div>
             ))}
-
         </div>
-        
       </div>
     </PagesAndSide>
   );

@@ -18,11 +18,11 @@ export const ChatDisplaySender = ({ message }) => {
   return (
     <div className="flexRow right" ref={messageScrollRef}>
       <div className=" chatView chatViewMd flexColumn gap5 radius10 hideOverflow mgBottom5 mgTop5 mainColor fontColorMain">
-        <div className="padBottom5 padLeft10 padTop5 font ">
+        <div className="padBottom5 padLeft10 padTop5 font bold boldMd">
           {message.senderId === user.nkataId ? "You" : message.senderId}
         </div>
         <div className="pad10 font ">{message.text}</div>
-        <div className="font fourthColor fontColorSec smallerFont padBottom5 padLeft10 padTop5">
+        <div className="font fourthColor fontColorSec tinyFont tinyFontMd padBottom5 padLeft10 padTop5">
           {formattedTime}
         </div>
       </div>

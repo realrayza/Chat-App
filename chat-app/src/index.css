@@ -362,11 +362,17 @@
   font-weight: bolder;
 }
 .tinyFont {
-  font-size: 0.625rem;
+  font-size: 0.725rem;
 }
 .smallFont {
   font-size: 0.9375rem;
 }
+.midFont {
+  font-size: 1rem;
+}
+.bigMidFont{
+    font-size: 1.1rem;
+  }
 .largeFont {
   font-size: 1.25rem;
 }
@@ -550,7 +556,7 @@ Button:hover {
   grid-area: pages;
 }
 .footer {
-  position:absolute;
+  position: absolute;
   width: 100vw;
   grid-area: footer;
   height: 6.25rem;
@@ -642,15 +648,17 @@ Button:hover {
 .headerIcon {
   display: none;
 }
-.notFound{
+.notFound {
   background-image: url("./assets/404-not-found.jpg");
-  background-size:cover;
+  background-size: cover;
 }
-.return{
+.return {
   background-color: rgba(224, 219, 219, 0.918);
   text-align: center;
 }
-
+.textNotice {
+  text-align: center;
+}
 @media (max-width: 600px) {
   /* padding and margin */
   .pad0Md {
@@ -970,10 +978,16 @@ Button:hover {
     font-weight: bolder;
   }
   .tinyFontMd {
-    font-size: 0.625rem;
+    font-size: 0.725rem;
   }
   .smallFontMd {
     font-size: 0.9375rem;
+  }
+  .midFontMd {
+    font-size: 1rem;
+  }
+  .bigMidFontMd {
+    font-size: 1.1rem;
   }
   .largeFontMd {
     font-size: 1.25rem;
@@ -1118,10 +1132,9 @@ Button:hover {
     left: 0rem;
     padding-left: 1.2rem;
     padding-bottom: 1rem;
-    top:2.5rem;
+    top: 2.5rem;
     z-index: 2;
   }
-
 
   .homeMd {
     width: 100vw;
@@ -1164,7 +1177,6 @@ Button:hover {
   .chatMd {
     width: 25rem;
     height: 50rem;
-    
   }
   .chatDisplayMd {
     width: 24.5rem;
@@ -1177,7 +1189,6 @@ Button:hover {
 
   .chatBoxMd {
     width: 24.5rem;
-  
   }
   .messageDisplayMd {
     height: 20rem;
@@ -1190,7 +1201,7 @@ Button:hover {
     width: 15rem;
     height: auto;
   }
-   .contactViewMd {
+  .contactViewMd {
     width: 23rem;
     height: auto;
   }
@@ -1214,19 +1225,16 @@ Button:hover {
     display: none;
   }
   .footerMd {
-  width: 100vw;
-  grid-area: footer;
-  height: 6.25rem;
-
+    width: 100vw;
+    grid-area: footer;
+    height: 6.25rem;
+  }
+  .pageMd {
+    width: 24.5;
+    margin-left: 0px;
+    padding: 0.625rem;
+  }
+  .contactFormInputMd {
+    width: 24rem;
+  }
 }
-.pageMd{
-  width:24.5;
-  margin-left: 0px;
-  padding:0.625rem;
-}
-.contactFormInputMd{
-  width:24rem
-}
-}
-
-
